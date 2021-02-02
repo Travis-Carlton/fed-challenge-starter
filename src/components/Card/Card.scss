@@ -1,0 +1,104 @@
+.card {
+	height: 45%;
+	width: calc(100vw / 5);
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 250ms;
+	&.active {
+		transform: scale(1.05);
+		box-shadow: 0 5px 20px grey;
+	}
+
+	&-img {
+		height: 60%;
+		position: relative;
+		&-overlay {
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 40%;
+			background-color: rgba(0, 0, 0, 0.466);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			font-weight: 700;
+			font-size: 20px;
+			border-top-right-radius: 5px;
+		}
+		> img {
+			height: 100%;
+			width: 100%;
+			border-top-right-radius: 5px;
+			border-top-left-radius: 5px;
+		}
+	}
+	&-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 40%;
+		box-shadow: 0 1px 4px grey;
+		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 5px;
+		box-sizing: border-box;
+		padding: 20px;
+		&-header {
+			height: 50%;
+			display: flex;
+			justify-content: space-between;
+			font-weight: 900;
+			font-size: 20px;
+			&-title {
+				width: 85%;
+			}
+			&-icon {
+				width: 15%;
+				border-radius: 5px;
+				> img {
+					height: 100%;
+					width: 100%;
+				}
+			}
+		}
+		&-detail {
+			height: 25%;
+			font-size: 10px;
+			font-weight: 700;
+		}
+		&-btn {
+			height: 25%;
+			color: rgb(0, 157, 255);
+			font-weight: 700;
+			transition: 250ms;
+			&.show {
+				opacity: 1;
+			}
+			&.hide {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.card {
+		width: 30%;
+	}
+}
+
+@media screen and (max-width: 990px) {
+	.card {
+		width: 45%;
+	}
+}
+
+@media screen and (max-width: 670px) {
+	.card {
+		width: 75%;
+	}
+}
